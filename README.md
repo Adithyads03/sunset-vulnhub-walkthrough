@@ -45,7 +45,7 @@ nmap -sC <TARGET_IP>
 ```
 
 During enumeration, I found that the FTP service allowed anonymous login. This gave me a way to investigate the files available on the target.
-![Target IP discovery using arp-scan](nmap scanning.png)
+![Target IP discovery using arp-scan](nmap%20scanning.png)
 ## 4. Accessing FTP and downloading the backup file
 
 I connected to the FTP service using:
@@ -76,7 +76,7 @@ cat backup
 ```
 
 The file contained a password hash. This became the next clue in my investigation.
-![Accessing the ftp](ftp enumeration.png)
+![Accessing the ftp](ftp%20enumeration.png)
 ## 5. Recovering the password
 
 I copied the hash and used Hashes.com to try to identify the original password.
@@ -86,7 +86,7 @@ The password I recovered was:
 `cheer14`
 
 This showed me how an exposed backup file can lead to the discovery of credentials and potentially provide a way into a system.
-![Decoding the retrieved hash](hash decode.png)
+![Decoding the retrieved hash](hash%20decode.png)
 ## 6. Logging in through SSH
 
 Using the recovered password, I connected to the target through SSH.
@@ -157,4 +157,4 @@ cat flag.txt
 ```
 
 This completed the challenge!
-![privilege escalation and finding flag](root access.png)
+![privilege escalation and finding flag](root%20access.png)
